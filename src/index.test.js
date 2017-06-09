@@ -17,7 +17,7 @@ describe("index.html", () => {
 		// having callback here, is an async request. need to pass in done param above
 		jsdom.env(index, function(err, window) {
 			const h1 = window.document.getElementsByTagName("h1")[0];
-			expect(h1.innerHtml).to.equal("Hellow World!");
+			expect(h1.innerHtml).to.equal("Hello World!");
 			done();
 			window.close();
 		});
