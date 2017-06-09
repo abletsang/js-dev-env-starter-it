@@ -2,7 +2,6 @@ import {expect} from "chai";
 import jsdom from "jsdom";
 import fs from "fs";
 
-
 describe("Our first test", () => {
 	it("should pass", () => {
 		expect(true).to.equal(true);
@@ -17,7 +16,7 @@ describe("index.html", () => {
 		// having callback here, is an async request. need to pass in done param above
 		jsdom.env(index, function(err, window) {
 			const h1 = window.document.getElementsByTagName("h1")[0];
-			expect(h1.innerHtml).to.equal("Hello World!");
+			expect(h1.innerHTML).to.equal("Hello World!");
 			done();
 			window.close();
 		});
